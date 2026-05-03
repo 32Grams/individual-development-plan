@@ -5,7 +5,7 @@ import java.net.*;
 
 public class BlockingEchoServer {
     public static void main(String[] args) throws IOException {
-        int port = 8080;
+        int port = 8081;
         ServerSocket serverSocket = new ServerSocket(port);
 
         while (true) {

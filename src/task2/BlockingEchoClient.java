@@ -6,7 +6,7 @@ import java.net.*;
 public class BlockingEchoClient {
     public static void main(String[] args) throws IOException {
         String host = "localhost";
-        int port = 8080;
+        int port = 8081;
         BufferedReader console = new BufferedReader(new InputStreamReader(System.in));
 
         try (
