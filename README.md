@@ -30,3 +30,27 @@ java -cp out task2.BlockingEchoClient
 2. Сервер: `Hi`
 3. Клиент вводит сообщения, пока не введёт `Hi`
 4. Сервер закрывает соединение
+
+### 2-й коммит (Task 1: HTTP-like Protocol)
+Сервер имитирует HTTP-протокол. Клиент отправляет HTTP-запрос `GET /index.html HTTP/1.1`.
+Сервер читает заголовки до пустой строки и возвращает HTTP-ответ с кодом 200, заголовками `Content-Type`, `Content-Length`, `Connection: close` и телом `"Hello from server!"`.
+Сервер работает на порту 8080.
+
+## Компиляция и запуск
+
+### Компиляция
+```
+javac -d out src/task1/HttpServer.java src/task1/HttpClient.java
+```
+### Запуск сервера
+```
+java -cp out task1.HttpServer
+```
+### Запуск клиента
+```
+java -cp out task1.HttpClient
+```
+### Протокол взаимодействия
+1. Клиент: `GET /index.html HTTP/1.1` + заголовки + пустая строка
+2. Сервер: `HTTP/1.1 200 OK` + заголовки + пустая строка + тело `Hello from server!`
+3. Сервер закрывает соединение
